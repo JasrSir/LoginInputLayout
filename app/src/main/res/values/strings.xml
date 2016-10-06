@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">LoginRelative</string>
+    <string name="nombre_de_usuario">nombre de usuario</string>
+    <string name="password">Password</string>
+    <string name="ckbRemember">Recordar</string>
+    <string name="txvUser">Usuario</string>
+    <string name="txvPassword">Contraseña</string>
+</resources>
