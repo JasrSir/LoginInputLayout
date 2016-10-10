@@ -15,7 +15,7 @@ public interface ILoginMvp {
     int DATA_EMPTY = 4;
 
     interface View{
-        public void setMessageError(String error);
+        public void setMessageError(String error, int id);
     }
 
 

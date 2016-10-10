@@ -22,14 +22,16 @@ public class LoginPresenter implements ILoginMvp.Presenter {
     //Obtenemos el recursoi
     @Override
     public void validateCredentials(String user, String pass) {
-        if (TextUtils.isEmpty(user) || TextUtils.isEmpty(pass)) {
-            vista.setMessageError(((Context)vista).getResources().getString(R.string.data_empty));
+        if (TextUtils.isEmpty(user)) {
+            vista.setMessageError(((Context) vista).getResources().getString(R.string.data_empty), R.id.edtUser);
+        } else if (TextUtils.isEmpty(pass)) {
+            vista.setMessageError(((Context) vista).getResources().getString(R.string.data_empty), R.id.edtPassword);
         } else if (!pass.matches("^.{0,}([0-9])+.{0,}$")) {
-            vista.setMessageError(((Context)vista).getResources().getString(R.string.password_digit));
+            vista.setMessageError(((Context)vista).getResources().getString(R.string.password_digit), R.id.edtPassword);
         } else if (!pass.matches("^.+[a-zA-Z]+.+$")) {
-            vista.setMessageError(((Context)vista).getResources().getString(R.string.password_case));
+            vista.setMessageError(((Context)vista).getResources().getString(R.string.password_case), R.id.edtPassword);
         } else if (pass.length() < 8) {
-            vista.setMessageError(((Context) vista).getResources().getString(R.string.password_length));
+            vista.setMessageError(((Context) vista).getResources().getString(R.string.password_length), R.id.edtPassword);
         } else {
             //Guardar el usuario en la clase Application, lo hacre el presentador
             //Hacemos un up-cast y luego un down-cast
