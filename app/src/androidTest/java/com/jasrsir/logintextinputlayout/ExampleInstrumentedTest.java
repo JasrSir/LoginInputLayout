@@ -1,4 +1,4 @@
-package com.jasrsir.loginrelative;
+package com.jasrsir.logintextinputlayout;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

@@ -1,12 +1,14 @@
-package com.jasrsir.loginrelative;
+package com.jasrsir.logintextinputlayout;
 
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 public class LoginRelative extends AppCompatActivity implements ILoginMvp.View {
 
@@ -15,9 +17,9 @@ public class LoginRelative extends AppCompatActivity implements ILoginMvp.View {
     private ILoginMvp.Presenter loginMvp;
     private EditText mEdtPassword;
     private EditText mEdtUser;
-    private Button mBtnOk;
-    private Button mBtnCancel;
-
+    private Button mBtnLogin;
+    private TextInputLayout mtilPass;
+    private TextInputLayout mtilUser;
     private final String TAG = "loginrelative";
 
     //El modelo vista presentador tenía una instancia de la vista, y en vez de llamar al método validar credenciales
@@ -32,20 +34,46 @@ public class LoginRelative extends AppCompatActivity implements ILoginMvp.View {
         //El presentador tenía una referencia a la vista, y la vista es la activity THIS
         loginMvp = new LoginPresenter(this);
         mEdtUser = (EditText) findViewById(R.id.edtUser);
+        mEdtUser.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                mtilUser.setError(null);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
         mEdtPassword = (EditText) findViewById(R.id.edtPassword);
-        mBtnOk = (Button) findViewById(R.id.btnOk);
-        mBtnOk.setOnClickListener(new View.OnClickListener() {
+        mEdtPassword.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                mtilPass.setError(null);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+        mBtnLogin = (Button) findViewById(R.id.btnLogin);
+        mtilPass = (TextInputLayout) findViewById(R.id.tilPass);
+        mtilUser = (TextInputLayout) findViewById(R.id.tilUser);
+        mBtnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 loginMvp.validateCredentials(mEdtUser.getText().toString(), mEdtPassword.getText().toString());
-            }
-        });
-
-        mBtnCancel = (Button) findViewById(R.id.btnCancel);
-        mBtnCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                resetValues();
             }
         });
 
@@ -60,15 +88,14 @@ public class LoginRelative extends AppCompatActivity implements ILoginMvp.View {
         //Toast.makeText(this, messageError, Toast.LENGTH_SHORT).show();
         switch (id) {
             case R.id.edtUser:
-                mEdtUser.setError(messageError);
+                mtilUser.setError(messageError);
                 break;
             case R.id.edtPassword:
-                mEdtPassword.setError(messageError);
+                mtilPass.setError(messageError);
                 break;
         }
 
     }
-
     private void resetValues() {
         mEdtPassword.setText("");
         mEdtUser.setText("");

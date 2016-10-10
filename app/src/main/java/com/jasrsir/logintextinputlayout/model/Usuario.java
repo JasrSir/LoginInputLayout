@@ -1,4 +1,4 @@
-package com.jasrsir.loginrelative.model;
+package com.jasrsir.logintextinputlayout.model;
 
 /**
  * Created by usuario on 6/10/16.

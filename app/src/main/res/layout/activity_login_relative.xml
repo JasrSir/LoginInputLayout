@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_login_relative"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,59 +9,51 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.jasrsir.loginrelative.LoginRelative">
+    tools:context="com.jasrsir.logintextinputlayout.LoginRelative">
 
-    <TextView
-        android:layout_width="@dimen/widget_textview_width"
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/txvUser"
-        android:id="@+id/txvUser"
-        android:layout_marginTop="@dimen/widget_margin_top"/>
+        android:id="@+id/tilUser"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        app:errorEnabled="true">
 
     <EditText
-        android:layout_toRightOf="@id/txvUser"
-        android:layout_alignBaseline="@id/txvUser"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="@string/nombre_de_usuario"
         android:ems="10"
-        android:layout_toEndOf="@+id/txvUser"
         android:id="@+id/edtUser"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"/>
+        android:hint="@string/messageUser"/>
+    </android.support.design.widget.TextInputLayout>
 
-    <TextView
-        android:text="@string/txvPassword"
-        android:layout_width="@dimen/widget_textview_width"
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edtUser"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/txvPassword"
-        android:layout_alignStart="@+id/txvUser"
-        android:layout_alignLeft="@+id/txvUser"
-        android:layout_marginTop="@dimen/widget_margin_top"/>
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:text="@string/password"
-        android:ems="10"
-        android:layout_below="@+id/txvPassword"
-        android:id="@+id/edtPassword"
-        android:layout_toRightOf="@id/txvPassword"
-        android:layout_toEndOf="@+id/txvPassword"
-        android:layout_alignBaseline="@id/txvPassword"
+        android:id="@+id/tilPass"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"/>
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/tilUser"
+        app:counterEnabled="true"
+        app:errorEnabled="true"
+        app:counterMaxLength="20">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/edtPassword"
+            android:hint="@string/messagePass"/>
+    </android.support.design.widget.TextInputLayout>
+
 
     <CheckBox
         android:text="@string/ckbRemember"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edtPassword"
+        android:layout_below="@+id/tilPass"
         android:id="@+id/ckbRemember"
         android:layout_marginTop="@dimen/widget_margin_top"
         android:layout_alignParentRight="true"
@@ -76,19 +69,12 @@
         android:layout_centerHorizontal="true">
 
         <Button
-            android:text="@android:string/cancel"
+            android:text="@string/Login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btnCancel"
-            style="?android:attr/buttonBarButtonStyle"/>
-
-        <Button
-            android:text="@android:string/ok"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnOk"
-            style="?android:attr/buttonBarButtonStyle"/>
-
-
+            android:id="@+id/btnLogin"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_centerHorizontal="true"
+            />
     </LinearLayout>
 </RelativeLayout>

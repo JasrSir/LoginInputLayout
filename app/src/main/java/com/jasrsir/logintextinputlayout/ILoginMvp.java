@@ -1,4 +1,4 @@
-package com.jasrsir.loginrelative;
+package com.jasrsir.logintextinputlayout;
 
 /**
  * Created by Jasrsir on 6/10/16.

@@ -1,9 +1,9 @@
-package com.jasrsir.loginrelative;
+package com.jasrsir.logintextinputlayout;
 
 import android.content.Context;
 import android.text.TextUtils;
 
-import com.jasrsir.loginrelative.model.Usuario;
+import com.jasrsir.logintextinputlayout.model.Usuario;
 
 /**
  * Created by Jasrsir on 6/10/16.
@@ -23,9 +23,9 @@ public class LoginPresenter implements ILoginMvp.Presenter {
     @Override
     public void validateCredentials(String user, String pass) {
         if (TextUtils.isEmpty(user)) {
-            vista.setMessageError(((Context) vista).getResources().getString(R.string.data_empty), R.id.edtUser);
+            vista.setMessageError(((Context) vista).getResources().getString(R.string.data_empty_u), R.id.edtUser);
         } else if (TextUtils.isEmpty(pass)) {
-            vista.setMessageError(((Context) vista).getResources().getString(R.string.data_empty), R.id.edtPassword);
+            vista.setMessageError(((Context) vista).getResources().getString(R.string.data_empty_p), R.id.edtPassword);
         } else if (!pass.matches("^.{0,}([0-9])+.{0,}$")) {
             vista.setMessageError(((Context)vista).getResources().getString(R.string.password_digit), R.id.edtPassword);
         } else if (!pass.matches("^.+[a-zA-Z]+.+$")) {

@@ -1,8 +1,9 @@
 <resources>
-    <string name="app_name">LoginRelative</string>
+    <string name="app_name">LoginTextInputLayout</string>
     <string name="nombre_de_usuario">nombre de usuario</string>
     <string name="password">Password</string>
     <string name="ckbRemember">Recordar</string>
-    <string name="txvUser">Usuario</string>
-    <string name="txvPassword">Contraseña</string>
+    <string name="messageUser">Introduzca el Usuario</string>
+    <string name="messagePass">Introduzca la contraseña</string>
+    <string name="Login">Login</string>
 </resources>

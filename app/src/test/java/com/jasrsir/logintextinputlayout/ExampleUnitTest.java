@@ -1,4 +1,4 @@
-package com.jasrsir.loginrelative;
+package com.jasrsir.logintextinputlayout;
 
 import org.junit.Test;
 

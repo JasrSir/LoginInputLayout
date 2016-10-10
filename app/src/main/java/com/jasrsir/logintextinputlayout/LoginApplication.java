@@ -1,8 +1,8 @@
-package com.jasrsir.loginrelative;
+package com.jasrsir.logintextinputlayout;
 
 import android.app.Application;
 
-import com.jasrsir.loginrelative.model.Usuario;
+import com.jasrsir.logintextinputlayout.model.Usuario;
 
 /**
  * Esta clase está creada para guardar valores en la APP para el singleton
