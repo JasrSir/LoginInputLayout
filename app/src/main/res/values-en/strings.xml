@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LoginTextInputLayout</string>
+    <string name="ckbRemember">Remember me</string>
+    <string name="messagePass">Introduce password</string>
+    <string name="messageUser">Introduce a user</string>
+    <string name="nombre_de_usuario">User name</string>
+    <string name="password">Password</string>
+</resources>

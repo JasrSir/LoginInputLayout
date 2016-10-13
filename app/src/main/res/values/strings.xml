@@ -5,5 +5,5 @@
     <string name="ckbRemember">Recordar</string>
     <string name="messageUser">Introduzca el Usuario</string>
     <string name="messagePass">Introduzca la contraseña</string>
-    <string name="Login">Login</string>
+    <string name="Login" translatable="false">Login</string>
 </resources>

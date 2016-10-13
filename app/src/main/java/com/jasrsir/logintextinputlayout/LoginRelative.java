@@ -1,8 +1,8 @@
 package com.jasrsir.logintextinputlayout;
 
+import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -81,6 +81,7 @@ public class LoginRelative extends AppCompatActivity implements ILoginMvp.View {
         if (((LoginApplication)getApplicationContext()).getUsuario() != null) {
             Log.d(TAG,((LoginApplication)getApplicationContext()).getUsuario().toString());
         }
+        Log.d(TAG,"Activity Finalizada");
     }
 
     @Override
@@ -100,6 +101,9 @@ public class LoginRelative extends AppCompatActivity implements ILoginMvp.View {
         mEdtPassword.setText("");
         mEdtUser.setText("");
     }
+
+    //TODO vamos a sobreescribir los métodos de la aplicación.
+
 
     @Override
     protected void onStop() {
