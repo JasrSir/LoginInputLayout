@@ -1,7 +1,6 @@
 package com.jasrsir.logintextinputlayout;
 
 import android.app.Application;
-
 import com.jasrsir.logintextinputlayout.model.Usuario;
 
 /**

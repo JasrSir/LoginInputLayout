@@ -2,7 +2,7 @@
 
 <!-- Tema especial para versiones superiores al 21 -->
 <resources>
-    <style name="AppTheme" parent="android:Theme.Material.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
         <item name="android:colorPrimary">@color/colorPrimary</item>
         <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="android:colorAccent">@color/colorAccent_Material</item>
@@ -13,7 +13,7 @@
         <item name="android:textColor">@color/colorError</item>
     </style>
 
-    <style name="hint" parent="TextAppearance.Design.Hint">
-        <item name="android:textColor">?attr/colorPrimary</item>
+    <style name="hint" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/colorPrimary</item>
     </style>
 </resources>

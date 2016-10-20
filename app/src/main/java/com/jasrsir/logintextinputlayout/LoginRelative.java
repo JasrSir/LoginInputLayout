@@ -81,7 +81,7 @@ public class LoginRelative extends AppCompatActivity implements ILoginMvp.View {
         if (((LoginApplication)getApplicationContext()).getUsuario() != null) {
             Log.d(TAG,((LoginApplication)getApplicationContext()).getUsuario().toString());
         }
-        Log.d(TAG,"Activity Finalizada");
+        Log.d(TAG,"Activity Creada");
     }
 
     @Override
@@ -106,8 +106,8 @@ public class LoginRelative extends AppCompatActivity implements ILoginMvp.View {
 
 
     @Override
-    protected void onStop() {
-        super.onStop();
-        Log.d(TAG,"Activity Finalizada");
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG,"Activity Destruída");
     }
 }
